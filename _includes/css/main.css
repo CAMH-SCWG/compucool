@@ -464,6 +464,7 @@ table tr:hover td {
   width: 400px; 
   margin: 10px;
   box-shadow: 2px 2px 1px #888888;
+  height: 550px;
 }
 
 .card-title {
@@ -471,6 +472,8 @@ table tr:hover td {
   background: lightseagreen; 
   color: white;
   padding: 5px; 
+  height: 5em;
+  vertical-align: middle;
 }
 
 .card-footer {
