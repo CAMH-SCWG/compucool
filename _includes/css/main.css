@@ -471,9 +471,12 @@ table tr:hover td {
   /* background: #C869BF; */
   background: lightseagreen; 
   color: white;
-  padding: 5px; 
   height: 5em;
   vertical-align: middle;
+}
+
+.card-body {
+  padding: 5px; 
 }
 
 .card-footer {
