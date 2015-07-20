@@ -464,6 +464,7 @@ table tr:hover td {
   margin: 10px;
   box-shadow: 2px 2px 1px #888888;
   min-width: 300px; 
+  max-width: 400px;
   min-height: 550px;
 }
 
