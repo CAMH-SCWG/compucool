@@ -467,9 +467,38 @@ table tr:hover td {
 }
 
 .card-title {
-  background: #C869BF; 
+  /* background: #C869BF; */
+  background: lightseagreen; 
+  color: white;
   padding: 5px; 
-  margin-top: auto; 
-  margin-bottom: auto;
 }
 
+.card-footer {
+  background: lightseagreen; 
+  color: white;
+  padding: 5px; 
+  text-align: center; 
+}
+
+.card-title h4 { margin-bottom: 0px; }
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.headshot { 
+  width: 300px; 
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  line-height: 120%;
+}
+
+.headshot-name { 
+  margin-top: 10px; 
+  font-weight: bold;
+}
+
+.headshot-title { 
+  font-style: italic;
+}
