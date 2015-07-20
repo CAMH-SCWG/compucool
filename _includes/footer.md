@@ -1,8 +1,6 @@
-
-
-Design by Tim O'Brien [t413.com](http://t413.com/)
-&mdash;
+Content: Jon Pipitone, Joseph Viviano, David Rotenberg 
+&#124;
+Design: Tim O'Brien 
 [SinglePaged theme](https://github.com/t413/SinglePaged)
-&mdash;
-this site is [open source]({{ site.source_link }})
-
+&#124;
+This site is [open source]({{ site.source_link }})
