@@ -461,10 +461,10 @@ table tr:hover td {
   background: white; 
   color: black; 
   float: left; 
-  width: 400px; 
   margin: 10px;
   box-shadow: 2px 2px 1px #888888;
-  height: 550px;
+  min-width: 300px; 
+  min-height: 550px;
 }
 
 .card-title {
