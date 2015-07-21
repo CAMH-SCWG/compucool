@@ -363,7 +363,7 @@ table a:link {
   text-decoration:none;
 }
 table a:visited {
-  color: black;
+  color: black !important;
   font-weight:bold;
   text-decoration:none;
 }
