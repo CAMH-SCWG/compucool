@@ -43,7 +43,7 @@ pre {
   display: block;
   margin: 20px 5%;
   padding: 4px 8px;
-  background: rgba(255,255,255,0.1);
+  /*background: rgba(255,255,255,0.1);*/
   word-wrap: break-word;
 }
 
@@ -509,3 +509,25 @@ table tr:hover td {
 .headshot-title { 
   font-style: italic;
 }
+
+/** Styles for writing answers that are revealed on hover */
+
+@media screen {
+  blockquote {
+    border-left: 2px solid #FFEB8E;
+    padding: 0px 0px; 
+  }
+
+  blockquote div {
+    border-left: 2px solid #FFEB8E;
+    transition: opacity 0.2s ease-in 0s;
+    opacity: 0.0;
+  }
+
+  blockquote:hover div {
+    transition: opacity 0.2s ease-in 0s;
+    opacity: 1.0;
+  }
+}
+
+
