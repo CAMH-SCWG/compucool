@@ -39,7 +39,7 @@ Connect to the network: `workshop`
 
     `cd data`
 
-### Begin
+### Start
 
 Our workshop today is based on material from the Software Carpentry project. Visit their lesson on the shell here: 
 
