@@ -4,11 +4,13 @@ layout: default
 
 # Introduction to the Linux Shell
 
-## Connecting to WiFi 
+## http://bit.ly/camh-linux-intro
+
+### Connecting to WiFi 
 
 Connect to the network: `workshop`
 
-## Connect to the SCC
+### Connect to the SCC
 
 - (Windows): Windows: start [MobaXterm](http://mobaxterm.mobatek.net/download-home-edition.html)
 
@@ -37,7 +39,7 @@ Connect to the network: `workshop`
 
     `cd data`
 
-## Begin
+### Begin
 
 Our workshop today is based on material from the Software Carpentry project. Visit their lesson on the shell here: 
 
