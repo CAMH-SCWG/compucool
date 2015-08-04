@@ -4,7 +4,7 @@ layout: default
 
 # Introduction to the Linux Shell
 
-## http://bit.ly/camh-linux-intro
+## bit.ly/camh-linux-intro
 
 ### Connecting to WiFi 
 
