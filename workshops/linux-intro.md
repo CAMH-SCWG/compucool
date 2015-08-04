@@ -49,6 +49,7 @@ Our workshop today is based on material from the Software Carpentry project. Vis
 - [Google](https://www.google.ca/search?q=google+all+the+things)
 - [Shell Cheatsheet](http://swcarpentry.github.io/shell-novice/reference.html)
 - [Extra Software Carpentry Lesson on Shell](http://swcarpentry.github.io/shell-extras/)
+- [Previous Shell workshop](http://pipitone.github.io/computing-skills/shell-intro/)
 - [StackOverflow](http://stackoverflow.com/questions/tagged/shell) 
 - [Bash Guide for Beginners](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
 - `man` or `help`
