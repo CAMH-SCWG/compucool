@@ -4,11 +4,11 @@ layout: default
 
 # Introduction to the Linux Shell
 
-### Connecting to WiFi 
+## Connecting to WiFi 
 
 Connect to the network: `workshop`
 
-### Connect to the SCC
+## Connect to the SCC
 
 - (Windows): Windows: start [MobaXterm](http://mobaxterm.mobatek.net/download-home-edition.html)
 
@@ -25,15 +25,22 @@ Connect to the network: `workshop`
 
 3. Make a folder for yourself: 
 
-    <code>
-    mkdir jon_pipitone
-    cd jon_pipitone
-    </code>
+{% highlight bash %}
+mkdir jon_pipitone
+cd jon_pipitone
+{% endhighlight %}
 
 4. Download the workshop data: 
 
-    ```sh
-    wget http://swcarpentry.github.io/shell-novice/shell-novice-data.zip
-    unzip shell-novice-data.zip
-    cd data
-    ```
+    
+    `wget http://swcarpentry.github.io/shell-novice/shell-novice-data.zip`
+
+    `unzip shell-novice-data.zip`
+
+    `cd data`
+
+## Begin
+
+Our workshop today is based on material from the Software Carpentry project. Visit their lesson on the shell here: 
+
+### [The Unix Shell](http://swcarpentry.github.io/shell-novice/)
