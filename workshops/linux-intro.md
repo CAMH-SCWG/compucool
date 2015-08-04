@@ -44,3 +44,11 @@ Connect to the network: `workshop`
 Our workshop today is based on material from the Software Carpentry project. Visit their lesson on the shell here: 
 
 ### [The Unix Shell](http://swcarpentry.github.io/shell-novice/)
+
+### Help
+- [Google](https://www.google.ca/search?q=google+all+the+things)
+- [Shell Cheatsheet](http://swcarpentry.github.io/shell-novice/reference.html)
+- [Extra Software Carpentry Lesson on Shell](http://swcarpentry.github.io/shell-extras/)
+- [StackOverflow](http://stackoverflow.com/questions/tagged/shell) 
+- [Bash Guide for Beginners](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
+- `man` or `help`
