@@ -25,19 +25,14 @@ Connect to the network: `workshop`
 
 3. Make a folder for yourself: 
 
-{% highlight bash %}
-mkdir jon_pipitone
-cd jon_pipitone
-{% endhighlight %}
+  `mkdir jon_pipitone`
+  `cd jon_pipitone`
 
 4. Download the workshop data: 
 
-    
-    `wget http://swcarpentry.github.io/shell-novice/shell-novice-data.zip`
-
-    `unzip shell-novice-data.zip`
-
-    `cd data`
+  `wget http://swcarpentry.github.io/shell-novice/shell-novice-data.zip`
+  `unzip shell-novice-data.zip`
+  `cd data`
 
 ## Begin
 
