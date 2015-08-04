@@ -25,9 +25,10 @@ Connect to the network: `workshop`
 
 3. Make a folder for yourself: 
 
-  `mkdir jon_pipitone`
-
-  `cd jon_pipitone`
+  {% highlight bash %}
+  mkdir jon_pipitone
+  cd jon_pipitone`
+  {% endhighlight %}
 
 4. Download the workshop data: 
 
