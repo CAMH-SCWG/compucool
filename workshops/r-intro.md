@@ -134,14 +134,13 @@ More Syntax
 -----------
 
 * Let's play find the things:
-  - a function
-  - the assignment operator `<-`
-  - the `=` for arguments
-  - the comments `#` and how they are used to document function and its content
-  - the `$` operator
-* Point to indentation and consistency in spacing to improve clarity
+  - Function
+  - `<-` for assignment
+  - `=` for arguments
+  - `#` for comments 
+  - `$` for column names
 
-![Example of a simple R script](https://github.com/pipitone/camh-computing-skills-august-2015/blob/gh-pages/img/r_starting_example_script.png)
+![Example of a simple R script](://raw.githubusercontent.com/pipitone/camh-computing-skills-august-2015/gh-pages/img/r_starting_example_script.png)
 
 Let's assign a value to a variable, and manipulate it:
 
@@ -151,61 +150,49 @@ Let's assign a value to a variable, and manipulate it:
 
 That didn't quite work, because we didn't assign this new number back to `weight_kg`.
 
-```
-weight_lb <- 2.2 * weight_kg
-```
+    weight_lb <- 2.2 * weight_kg
 
 A vector is a list of similar things. For example, it can be a bunch of numbers, or words (strings), but not both.
 
-```
-weights <- c(50, 60, 65, 54, 23)
-weights
-
-animals <- c("mouse", "rat", "dog", "ghost")
-animals
-
-ivemadeahugemistake <- c("but", 1, "why???")
-ivemadeahugemistake
-```
+    weights <- c(50, 60, 65, 54, 23)
+    weights
+    
+    animals <- c("mouse", "rat", "dog", "ghost")
+    animals
+    
+    ivemadeahugemistake <- c("but", 1, "why???")
+    ivemadeahugemistake
 
 R tuned our `1` (number) into a `"1"` (string). `:(`
 
 We can also have a look at the number of items inside of a vector:
 
-```
-length(weights)
-length(animals)
-```
+    length(weights)
+    length(animals)
 
 And we can find things within them:
 
-```
-# return 'logical' array
-("ghost" == animals) 
-
-# return 'index'
-which("ghost" == animals)
-
-# works for numbers too
-which(65 == weights)
-
-# find all the things smaller than 65
-which(weights < 65)
-```
+    # return 'logical' array
+    ("ghost" == animals) 
+    
+    # return 'index'
+    which("ghost" == animals)
+    
+    # works for numbers too
+    which(65 == weights)
+    
+    # find all the things smaller than 65
+    which(weights < 65)
 
 Data Frames
 -----------
 
 Most of the time we aren't going to want to work with a single vector. We're going to want 
-to work with a whole bunch of them, which is all a spreadsheet is.
+to work with a whole bunch of them, which is all a spreadsheet is. In `R`, this is called a 'data.frame'. Each column is a vector, and has a name.
 
-In `R`, this is called a 'data.frame'. Each column is a vector, and has a name.
+[Download the data here (right click, 'save as').](https://raw.githubusercontent.com/pipitone/camh-computing-skills-august-2015/gh-pages/assets/surveys.csv)
 
-[Download the data here.](https://raw.githubusercontent.com/pipitone/camh-computing-skills-august-2015/gh-pages/assets/surveys.csv)
-
-```
-surveys <- read.csv('raw/surveys.csv')
-```
+    surveys <- read.csv('raw/surveys.csv')
 
 We are studying the species and weight of animals caught in plots in our study
 area. The dataset is stored as a `csv` file: each row holds information for a
