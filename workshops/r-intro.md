@@ -5,12 +5,12 @@ layout: default
 Before we get started
 ---------------------
 
-* Start RStudio (presentation of RStudio -below- should happen here)
+* Start RStudio. 
 * Under the `File` menu, click on `New project`, choose `New directory`, then
   `Empty project`
 * Enter a name for this new folder, and choose a convenient location for
   it. This will be your **working directory** for the rest of the day
-  (e.g., `~/data-carpentry`)
+  (e.g., `~/workshop`)
 * Click on "Create project"
 * Under the `Files` tab on the right of the screen, click on `New Folder` and
   create a folder named `data` within your newly created working directory.
@@ -145,11 +145,9 @@ More Syntax
 
 Let's assign a value to a variable, and manipulate it:
 
-```
-weight_kg <- 55
-2.2 * weight_kg
-weight_kg
-```
+    weight_kg <- 55
+    2.2 * weight_kg
+    weight_kg
 
 That didn't quite work, because we didn't assign this new number back to `weight_kg`.
 
