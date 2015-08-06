@@ -263,10 +263,13 @@ In the case of ordinal variables, you need to specify this with the `ordered` ar
 
     food <- factor(c("low", "high", "medium", "high", "low", "medium", "high"))
     levels(food)
+
     food <- factor(food, levels=c("low", "medium", "high"))
     levels(food)
+
     min(food) ## doesn't work
     food <- factor(food, levels=c("low", "medium", "high"), ordered=TRUE)
+
     levels(food)
     min(food) ## works!
 
@@ -302,8 +305,11 @@ or several indices in square brackets.
 
     animals <- c("mouse", "rat", "dog", "cat")
     animals[2]
+
     animals[c(3, 2)]
+
     animals[2:4]
+
     more_animals <- animals[c(1:3, 2:4)]
     more_animals
 
