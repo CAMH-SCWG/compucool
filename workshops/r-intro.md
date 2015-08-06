@@ -2,8 +2,31 @@
 layout: default
 ---
 
-Before we get started
----------------------
+Getting Organized
+-----------------
+
+Typically, an analysis will involve some (valuable) raw data, maybe some intermediate files, and some outputs.
+
+Consider the following:
+
+    project/
+        raw/       -- raw data
+        tmp/       -- intermediate files (won't always need this)
+        outputs/   -- outputs
+        bin/       -- scripts that turn raw into outputs
+
+There are a few reasons this is a good way to work:
+
++ Your raw data will not be cluttered with intermediate & output files. In most cases, your scripts will
+  generate a lot of undesirable outputs before they will [do the right thing](https://www.youtube.com/watch?v=EUv3iZ4PafM),
+  so it is better to put these files in other folders where they can be easily (and safely) deleted.
++ Your intermediate files, depending on your data and analysis, might be very large. This makes it easy
+  to delete them after you've ensured that your analysis is working properly.
++ Your code is your method. Your supervisior, reviewers, and your future self will all appreciate
+  you storing your code in a place that will regenerate your outputs *on demand* with no/minimal effort.
+
+Setting up RStudio
+------------------
 
 * Start RStudio. 
 * Under the `File` menu, click on `New project`, choose `New directory`, then
@@ -16,12 +39,20 @@ Before we get started
   create a folder named `data` within your newly created working directory.
   (e.g., `~/workshop/data`)
 * Create a new R script (File > New File > R script) and save it in your working
-  directory (e.g. `data-party.R`)
+  directory (e.g. `bin/workshop.R`)
 
 Your working directory should now look something like this:
 
 ![How it should look like at the beginning of this lesson](https://raw.githubusercontent.com/pipitone/camh-computing-skills-august-2015/gh-pages/img/r_starting_how_it_should_like.png)
 
+Getting Help
+------------
+
++ [Google](http://lmgtfy.com/?q=google)
++ [StackOverflow](http://stackoverflow.com/questions/tagged/r)
++ [Introduction to R](http://cran.r-project.org/doc/manuals/R-intro.pdf)
++ [R-help](https://stat.ethz.ch/mailman/listinfo/r-help)
++ Show us/your friends your code.
 
 Interacting with R
 ------------------
@@ -89,46 +120,11 @@ to use `<-`.
 
 `=` should only be used to specify the values of arguments in functions:
 
-```
-surveys <- read.csv(file="data/surveys.csv")
-```
+    somedata <- read.csv(file="somefile.csv")
 
-Here, we've loaded an entire dataset into the variable `surveys`. 
-Arguments can be about pretty much anything, many are optional and/or have defaults. 
-To see what arguments are available, you can use `args(read.csv)`, `help(read.csv)`, and 
-`example(read.csv)`.
+Here, we've loaded an entire dataset into the variable `somedata` (this wont actually work -- you don't have a file
+named 'somefile.csv'). Arguments can be about pretty much anything, many are optional and/or have defaults. To see what arguments are available, you can use `args(read.csv)`, `help(read.csv)`, and `example(read.csv)`.
 
-Organizing Your Working Directory
----------------------------------
-
-Typically, an analysis will involve some (valuable) raw data, maybe some intermediate files, and some outputs.
-
-Consider the following:
-
-    project/
-        raw/       -- raw data
-        tmp/       -- intermediate files (won't always need this)
-        outputs/   -- outputs
-        bin/       -- scripts that turn raw into outputs
-
-There are a few reasons this is a good way to work:
-
-+ Your raw data will not be cluttered with intermediate & output files. In most cases, your scripts will
-  generate a lot of undesirable outputs before they will [do the right thing](https://www.youtube.com/watch?v=EUv3iZ4PafM),
-  so it is better to put these files in other folders where they can be easily (and safely) deleted.
-+ Your intermediate files, depending on your data and analysis, might be very large. This makes it easy
-  to delete them after you've ensured that your analysis is working properly.
-+ Your code is your method. Your supervisior, reviewers, and your future self will all appreciate
-  you storing your code in a place that will regenerate your outputs *on demand* with no/minimal effort.
-
-Getting Help
-------------
-
-+ [Google](http://lmgtfy.com/?q=google)
-+ [StackOverflow](http://stackoverflow.com/questions/tagged/r)
-+ [Introduction to R](http://cran.r-project.org/doc/manuals/R-intro.pdf)
-+ [R-help](https://stat.ethz.ch/mailman/listinfo/r-help)
-+ Show us/your friends your code.
 
 More Syntax
 -----------
@@ -190,6 +186,8 @@ Data Frames
 Most of the time we aren't going to want to work with a single vector. We're going to want 
 to work with a whole bunch of them, which is all a spreadsheet is. In `R`, this is called a 'data.frame'. Each column is a vector, and has a name.
 
+Now we want to download and load in some data.
+
 [Download the data here (right click, 'save as').](https://raw.githubusercontent.com/pipitone/camh-computing-skills-august-2015/gh-pages/assets/surveys.csv)
 
     surveys <- read.csv('raw/surveys.csv')
@@ -215,30 +213,26 @@ single animal, and the columns represent:
 | plot\_type       | type of plot                       |
 
 
-```
-# Getting an overview of your data
-head(surveys)
-str(surveys)
+Looking at your data
+--------------------
 
-# getting the size of your data frame
-nrow(surveys) # the number of samples we've collected
-ncol(surveys) # the number of vectors we've stored
+    # Getting an overview of your data
+    head(surveys)
+    str(surveys)
+    
+    # getting the size of your data frame
+    nrow(surveys) # the number of samples we've collected
+    ncol(surveys) # the number of vectors we've stored
 
-colnames(surveys) # the names of each column
-```
+    colnames(surveys) # the names of each column
 
 This is super handy, because R lets you call any column by name using the `$` symbol.
 
-```
-surveys$month
-```
+    surveys$month
 
 Let's have a look at whether the weights recorded follow a normal distribution:
 
-
-```
-hist(surveys$weight)
-```
+    hist(surveys$weight)
 
 Nope.
 
@@ -255,40 +249,26 @@ Once created, factors can only contain a pre-defined set values, known as
 *levels*. By default, R always sorts *levels* in alphabetical order. For
 instance, if you have a factor with 2 levels:
 
-```
-sex <- factor(c("male", "female", "female", "male"))
-```
+    sex <- factor(c("male", "female", "female", "male"))
 
 R will assign `1` to the level `"female"` and `2` to the level `"male"` (because
 `f` comes before `m`, even though the first element in this vector is
 `"male"`). You can check this by using the function `levels()`, and check the
 number of levels using `nlevels()`:
 
-```
-levels(sex)
-
-nlevels(sex)
-```
+    levels(sex)
+    nlevels(sex)
 
 In the case of ordinal variables, you need to specify this with the `ordered` argument:
 
-```
-food <- factor(c("low", "high", "medium", "high", "low", "medium", "high"))
-
-levels(food)
-
-food <- factor(food, levels=c("low", "medium", "high"))
-
-levels(food)
-
-min(food) ## doesn't work
-
-food <- factor(food, levels=c("low", "medium", "high"), ordered=TRUE)
-
-levels(food)
-
-min(food) ## works!
-```
+    food <- factor(c("low", "high", "medium", "high", "low", "medium", "high"))
+    levels(food)
+    food <- factor(food, levels=c("low", "medium", "high"))
+    levels(food)
+    min(food) ## doesn't work
+    food <- factor(food, levels=c("low", "medium", "high"), ordered=TRUE)
+    levels(food)
+    min(food) ## works!
 
 Inspecting Data Frames
 ----------------------
@@ -320,46 +300,33 @@ Indexing and sequences
 If we want to extract one or several values from a vector, we must provide one
 or several indices in square brackets. 
 
-```
-animals <- c("mouse", "rat", "dog", "cat")
-
-animals[2]
-
-animals[c(3, 2)]
-
-animals[2:4]
-
-more_animals <- animals[c(1:3, 2:4)]
-
-more_animals
-```
+    animals <- c("mouse", "rat", "dog", "cat")
+    animals[2]
+    animals[c(3, 2)]
+    animals[2:4]
+    more_animals <- animals[c(1:3, 2:4)]
+    more_animals
 
 `:` creates numeric vectors of integer in increasing or decreasing order.
 Test `1:10` and `10:1` for instance. The function `seq()` (for `seq`uence) 
 can be used to create more complex patterns:
 
-```
-seq(1, 10, by=2)
 
-seq(5, 10, length.out=3)
-
-seq(50, by=5, length.out=10)
-
-seq(1, 8, by=3) # sequence stops to stay below upper limit
-```
+    seq(1, 10, by=2)
+    seq(5, 10, length.out=3)
+    seq(50, by=5, length.out=10)
+    seq(1, 8, by=3) # sequence stops to stay below upper limit
 
 Our survey data frame has rows and columns (it has 2 dimensions), if we want to
 extract some specific data from it, we need to specify the "coordinates" we want
 from it. Row numbers come first, followed by column numbers.
 
-```
-surveys[1, 1]   # first element in the first column of the data frame
-surveys[1, 6]   # first element in the 6th column
-surveys[1:3, 7] # first three elements in the 7th column
-surveys[3, ]    # the 3rd element for all columns
-surveys[, 8]    # the entire 8th column
-head_surveys <- surveys[1:6, ] # surveys[1:6, ] is equivalent to head(surveys)
-```
+    surveys[1, 1]   # first element in the first column of the data frame
+    surveys[1, 6]   # first element in the 6th column
+    surveys[1:3, 7] # first three elements in the 7th column
+    surveys[3, ]    # the 3rd element for all columns
+    surveys[, 8]    # the entire 8th column
+    head_surveys <- surveys[1:6, ] # surveys[1:6, ] is equivalent to head(surveys)
 
 Where do we go from here?
 -------------------------
