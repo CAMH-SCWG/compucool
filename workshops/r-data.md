@@ -21,22 +21,22 @@ http://bit.ly/camh-r-data
     females = subset(demographics, sex = "F")
     # ooooops
     females = subset(demographics, sex == "F")    # use ==
-
+    
     # merging row-wise
     eth1 = subset(demographics, ethnicity == 1)
     eth2 = subset(demographics, ethnicity == 2)
     eth1_2 = rbind(eth1,eth2)
-
-  # more complex subsets
-  females_eth1 = subset(females, ethnicity == 1) 
-  females_eth1 = subset(demographics, sex == "F" & ethnicity == 1) 
+    
+    # more complex subsets
+    females_eth1 = subset(females, ethnicity == 1) 
+    females_eth1 = subset(demographics, sex == "F" & ethnicity == 1) 
 
 ## merging data.frames
 
-  data = merge(demographics, volumes)
+    data = merge(demographics, volumes)
 
-  # missing subjects in 'volumes'
-  data = merge(demographics, volumes, all.x = T)
+    # missing subjects in 'volumes'
+    data = merge(demographics, volumes, all.x = T)
 
 ### Plotting
 
