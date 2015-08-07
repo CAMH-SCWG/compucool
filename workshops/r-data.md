@@ -44,6 +44,15 @@ Load the data:
     # missing subjects in 'volumes'
     data = merge(demographics, volumes, all.x = T)
 
+## reshaping data frames
+
+    library(reshape)
+    # what if you want to model whether the hippocampal volume is left or right
+    melted_data = melt(data, measure.vars = c("L_Hipp", "R_Hipp"))
+    
+    # "recasting" is hard... but powerful
+    recast_data = cast(melted, ... ~ variable)
+
 ### Plotting
 
     plot(cerebral_vol_l ~ Age, data = data)
