@@ -2,8 +2,10 @@
 layout: default
 ---
 
-Getting Organized
------------------
+# Introduction to R
+# http://bit.ly/camh-r-intro
+
+## Getting Organized
 
 Typically, an analysis will involve some (valuable) raw data, maybe some intermediate files, and some outputs.
 
