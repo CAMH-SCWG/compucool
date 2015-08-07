@@ -6,6 +6,8 @@ layout: default
 
 # http://bit.ly/camh-r-data
 
+Previous class: http://bit.ly/camh-r-intro
+
 ## Data
 
 - [demograhics.csv](http://pipitone.github.io/camh-computing-skills-august-2015/workshops/demographics.csv)
