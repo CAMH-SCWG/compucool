@@ -11,6 +11,9 @@ http://bit.ly/camh-r-data
 - [volumes.csv](http://pipitone.github.io/camh-computing-skills-august-2015/workshops/volumes.csv)
 - [wm.csv](http://pipitone.github.io/camh-computing-skills-august-2015/workshops/wm.csv)
 
+
+Load the data: 
+
     demographics = read.csv('demographics.csv')
     volumes = read.csv('volumes.csv')
     wm = read.csv('vm.csv')
