@@ -7,10 +7,34 @@ fa-icon: calendar
 
 ### Workshop Schedule and Registration
 
-| Date/time           | Topic                                 | Location | Register                         | 
-|---------------------|---------------------------------------|----------|----------------------------------|
-| August 4, 1pm-4pm   | Introduction to Linux                 | RS 2062  | <a href="https://www.eventbrite.ca/e/introduction-to-linux-tickets-17851055989">register here</a> | 
-| August 5, 10am-12pm | CAMH Specialised Compute Center (SCC) | RS 2020  | <a href="https://www.eventbrite.ca/e/using-the-camh-specialised-compute-center-scc-tickets-17851087082">register here</a> | 
-| August 5, 1pm-4pm   | Automating tasks in Linux             | RS 2062  | <a href="https://www.eventbrite.ca/e/automating-tasks-in-linux-tickets-17851536426">register here</a> | 
-| August 6, 9am-12pm  | Introduction to R                     | RS 2062  | <a href="https://www.eventbrite.ca/e/introduction-to-r-tickets-17851688882">register here</a> | 
-| August 7, 1pm-4pm   | Data munging with R                   | RS 2062  | <a href="https://www.eventbrite.ca/e/data-munging-with-r-tickets-17851721981">register here</a> | 
+<div style="width:100%; text-align:left;" id="wrapper" ><iframe
+src="//eventbrite.ca/tickets-external?eid=19464203958&ref=etckt"
+frameborder="0" height="1000" width="100%" vspace="0" hspace="0"
+marginheight="5" marginwidth="5" scrolling="no"
+allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial;
+font-size:10px; padding:5px 0 5px; margin:2px; width:100%; text-align:left;"
+><a class="powered-by-eb" style="color: #dddddd; text-decoration: none;"
+target="_blank" href="http://www.eventbrite.ca/r/etckt">Powered by
+Eventbrite</a></div></div>
+
+
+<!--
+Set-up: Fri, Nov 27, 3-5pm, RS 2022
+Computer Organisation: Mon, Nov 23 10am-12pm, RS 2022
+Linux/Shell (1/2): Mon, Nov 23 1-3pm, RS 2022
+Spreadsheets: Mon, Nov 23 3-5pm, RS 2022
+
+Linux/Shell (2/2): Tue, Nov 24 10am-12pm, RS 2022
+R (1/1): Tue, Nov 24 1-3pm, RS 2022 
+Databases: Tue, Nov 24 3-5pm, RS 2022 
+
+R (2/2): Wed, Nov 25, 1-3pm, RS 2015
+Intro to Python: Wed, Nov 25, 3-5pm, RS 2015
+
+MRI analysis in Python: Thu, Nov 26, 10am-12pm, RS 2015
+MATLAB: Thu, Nov 26, 1am-3pm, RS 2015
+
+Using the SCC: Fri, Nov 27, 10am-12pm, RS 2022
+Scientific Computing: Fri, Nov 27, 1-3pm, RS 2022
+Q&A/Drop-in: Fri, Nov 27, 3-5pm, RS 2022
+-->
