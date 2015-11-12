@@ -461,11 +461,12 @@ table tr:hover td {
   background: white; 
   color: black; 
   float: left; 
-  margin: 10px;
+  margin: 5px;
   box-shadow: 2px 2px 1px #888888;
-  min-width: 300px; 
-  max-width: 400px;
-  min-height: 550px;
+  min-width: 310px; 
+  max-width: 310px;
+  min-height: 600px;
+  position: relative;
 }
 
 .card-title {
@@ -474,18 +475,22 @@ table tr:hover td {
   color: white;
   padding: 5px;
   vertical-align: middle;
+  text-align: center;
 }
 
 .card-body {
-  padding: 5px; 
+  padding: 1px; 
 }
-
 .card-footer {
   background: lightseagreen; 
+  position: absolute;
+  bottom: 0px;
   color: white;
-  padding: 5px; 
+  width: 100%;
   text-align: center; 
+  padding: 0.5em; 
 }
+.card-footer p { margin: 0px !important; margin-top: 0px; }
 
 .card-title h4 { margin-bottom: 0px; }
 
@@ -508,6 +513,10 @@ table tr:hover td {
 
 .headshot-title { 
   font-style: italic;
+}
+
+.day {
+  clear: both;
 }
 
 /** Styles for writing answers that are revealed on hover */
