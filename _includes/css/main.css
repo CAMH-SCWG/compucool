@@ -481,6 +481,12 @@ table tr:hover td {
 .card-body {
   padding: 1px; 
 }
+
+.card-body a { 
+  color: blue; 
+}
+
+
 .card-footer {
   background: lightseagreen; 
   position: absolute;
