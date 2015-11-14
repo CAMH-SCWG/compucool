@@ -26,5 +26,5 @@ Send us <a href="mailto:jon.pipitone@camh.ca">email</a> if you are having troubl
 
 ### MATLAB 
 
-- [MATLAB trial version] (https://www.mathworks.com/programs/trials/trial_request.html)
-- [mobaXterm] (http://info2.camh.net/scc/index.php/Users_Guide#Login and http://info2.camh.net/scc/index.php/MATLAB) for remote access (Windows only)
+- [MATLAB trial version](https://www.mathworks.com/programs/trials/trial_request.html)
+- [mobaXterm](http://info2.camh.net/scc/index.php/Users_Guide#Login and http://info2.camh.net/scc/index.php/MATLAB) for remote access (Windows only)
