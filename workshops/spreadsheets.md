@@ -39,6 +39,15 @@ finally:
    something(decent)
 ```
 
+
+{% highlight ruby %}
+
+def foo
+  puts 'foo'
+end
+
+{% endhighlight %}
+
 ## Headings
 ### Sub-headings
 
