@@ -4,7 +4,8 @@ layout: workshop
 
 # Introduction to the Linux Shell
 
-----
+--------
+
 ## Setup
 **Wifi**: `workshop`
 
@@ -13,7 +14,8 @@ Software you'll need to install:
 - **Mac and Linux**: You're already set
 
 Our workshop today is based on material from the Software Carpentry project. Visit their lesson on the shell here: 
-----
+
+---------
 
 [The Unix Shell](http://swcarpentry.github.io/shell-novice/)
 
