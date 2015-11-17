@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: workshop
 ---
 
 # Introduction to the Linux Shell
