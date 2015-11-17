@@ -457,6 +457,10 @@ table tr:hover td {
   padding: 1px; 
 }
 
+.card-body p {
+  padding: 0 5%; 
+}
+
 .card-body a { 
   color: blue !important; /* nasty */ 
 }
