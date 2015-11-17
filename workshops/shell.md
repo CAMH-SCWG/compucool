@@ -21,7 +21,7 @@ Our workshop today is based on material from the Software Carpentry project. Vis
 [The Unix Shell](http://swcarpentry.github.io/shell-novice/)
 
 
-### More Help
+## Going further
 - [Shell Cheatsheet](http://swcarpentry.github.io/shell-novice/reference.html)
 - [Extra Software Carpentry Lesson on Shell](http://swcarpentry.github.io/shell-extras/)
 - [Bash Guide for Beginners](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
