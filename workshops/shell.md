@@ -4,8 +4,7 @@ layout: workshop
 
 # Introduction to the Linux Shell
 
-<div style="background-color: #b5b5b7; border: 1px solid #677077">
-
+----
 ## Setup
 **Wifi**: `workshop`
 
@@ -13,9 +12,8 @@ Software you'll need to install:
 - **Windows**: [Git for Windows](https://git-for-windows.github.io/), and [MobaXterm](http://mobaxterm.mobatek.net)
 - **Mac and Linux**: You're already set
 
-</div> 
-
 Our workshop today is based on material from the Software Carpentry project. Visit their lesson on the shell here: 
+----
 
 [The Unix Shell](http://swcarpentry.github.io/shell-novice/)
 
