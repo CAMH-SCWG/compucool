@@ -524,4 +524,6 @@ table tr:hover td {
   }
 }
 
-
+.highlight {
+  margin: 1em 0; 
+}
