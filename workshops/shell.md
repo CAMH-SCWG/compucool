@@ -7,16 +7,18 @@ layout: workshop
 --------
 
 ## Setup
-**Wifi**: `workshop`
+**Wifi SSID**: `workshop`
 
 Software you'll need to install:
+
 - **Windows**: [Git for Windows](https://git-for-windows.github.io/), and [MobaXterm](http://mobaxterm.mobatek.net)
 - **Mac and Linux**: You're already set
 
-Our workshop today is based on material from the Software Carpentry project. Visit their lesson on the shell here: 
-
 ---------
 
+## The Workshop
+
+Our workshop today is based on material from the Software Carpentry project. Visit their lesson on the shell here: 
 [The Unix Shell](http://swcarpentry.github.io/shell-novice/)
 
 
