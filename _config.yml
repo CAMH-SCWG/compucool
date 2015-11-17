@@ -21,8 +21,8 @@ highlighter: pygments
 title:       "Computing Skills Workshop for Researchers"
 keywords:    "CAMH, research, computing, scientific computing, workshop"
 description: "A week long series of self-paced computing skills fundamentals workshops for CAMH researchers"
-root:        "https://scicompclub.github.io/lrn2compute-nov-2015"
-sources_link: "http://scicompclub.github.io/lrn2compute-nov-2015"
+root:        "https://camh-scwg.github.io/lrn2compute"
+sources_link: "http://camh-scwg.github.io/lrn2compute"
 favicon:     #put a path like: "img/favicon.ico"
 touch_icon:  #put a path like: "img/apple-touch-icon.png"
 google_analytics_key: ## put YOUR key here to enable tracking! (blank to disable)
