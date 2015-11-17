@@ -23,32 +23,25 @@ Here's how you include links to files:
 
 And here's how you include a block of code: 
 
-```r
+{% highlight r %}
 this = is.r.code()
 if like(you,r) {
    i.exit()
 }
-```
+{% endhighlight %}
 
 But if you want python: 
 
-```python
+{% highlight python %}
 try: 
    to_learn(python)
 finally: 
    something(decent)
-```
-
-
-{% highlight ruby %}
-
-def foo
-  puts 'foo'
-end
-
 {% endhighlight %}
 
+
 ## Headings
+
 ### Sub-headings
 
 Go here for more on [Markdown](https://help.github.com/articles/github-flavored-markdown/).
