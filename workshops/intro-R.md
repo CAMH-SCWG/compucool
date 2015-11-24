@@ -11,7 +11,17 @@ layout: workshop
 
 
 ---------
+Please have these both installed (come early if you need help):
 
+- **R**: [Download from here](https://cran.r-project.org/)
+- **rstudio**: [Download from here](https://www.rstudio.com/products/RStudio/#Desktop)
+
+Also, please install here awesome R packages (again, if you don't know how please come early):
+- 'rms' ()
+- 'ggplot2'
+- 'car'
+
+--------
 Please download the following files
 
 
@@ -45,6 +55,7 @@ Welcome to R studio! You should see 4 spaces:
 ---
 
 for this tutorial, we are going to use the packages ggplot, rms and car.
+
 + Look at the Packages Tab
 + Click on the check box to the left of "ggplot2"
 + Notice that a bunch of lines start running in "Console" window to show you that the package is
@@ -76,6 +87,7 @@ In order to view and manipulate this data in R, we need to *import* the data int
 (the same as you would open a file in excel to edit it).
 
 *Rstudio trick:*
+
 + Click on the "Environment" Tab, then click on "Import Dataset" --> From text File
 + Navigate the browser window to the location of data2.csv and click Open
 + This opens a text reader window: You see the raw text on the top and what R will read in (the data
@@ -104,6 +116,7 @@ Now we have two **"data frames"** loaded into our workspace. They are called dat
 
 ***4. Basic data summaries and visualization ( head, tail, describe() )***
 ---
+
 + Now that we have the data loaded, how do we just look at it? The simplest way is with the "View"
 function within rstudio.
 + In Enviroment tab. Click on the little spreadsheet to teh far right of the data1.csv row... this
@@ -167,6 +180,7 @@ you are dealing with. This will be especially important when we discuss our stat
 after all, R is statistical software.
 
 The following will correctly format our variables for analyses:
+
 + age is a numeric variable
 + ethicity is a discrete factor
 + sex is a discrete factor
