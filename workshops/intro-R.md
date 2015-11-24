@@ -1,4 +1,24 @@
-# R Workshop syllabus (Erin/Dan) SESSION 1
+---
+title: Intro to R
+layout: workshop
+---
+
+# Introduction to R - with Dan and Erin
+
+--------
+
+**Wifi SSID**: `workshop`
+
+
+---------
+
+Please download the following files
+
+
+1. [Rtutorial_data1.csv](/lrn2compute/workshops/data/Rtutorial_data1.csv)
+2. [Rtutorial_data2.csv](/lrn2compute/workshops/data/Rtutorial_data2.csv)
+
+
 
 ***1. RStudio environment***
 ---
