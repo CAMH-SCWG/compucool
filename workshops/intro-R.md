@@ -89,10 +89,10 @@ has 350 rows (or observations) and 5 variables
 "data1 <- read.csv(...)" and then click on "To Source"
 + Repeat this whole process for data2.csv
 
-~~~{.r}
+{% highlight r %}
 data1 <- read.csv("~/Downloads/Rtutorial_data1.csv")
 data2 <- read.csv("~/Downloads/Rtutorial_data2.csv")
-~~~
+{% endhighlight %}
 
 + What you actually did was use the read.csv function... to find out more about this option you can
 type "?read.csv" in the Console
@@ -111,37 +111,37 @@ shows you your data in what looks like a spreadsheet - but you cannot edit it!
 
 To look at the top six rows of your data:
 
-~~~{.r}
+{% highlight r %}
 head(data1)
-~~~
+{% endhighlight %}
 
 To look at the bottom six rows:
 
-~~~{.r}
+{% highlight r %}
 tail(data2)
-~~~
+{% endhighlight %}
 
 Using the function names() tells us what all the variables in our dataframe are called.
 the ls() function does the same thing, except it returns the variables in alphabetical order
 
-~~~{.r}
+{% highlight r %}
 names(data1)
 ls(data1)
-~~~
+{% endhighlight %}
 
 That was all nice, but we want to find out more about this data we can use "summary"
 
-~~~{.r}
+{% highlight r %}
 summary(data1)
 summary(data2)
-~~~
+{% endhighlight %}
 
 Another very useful function is describe()  - (from the rms package)
 
-~~~{.r}
+{% highlight r %}
 describe(data1)
 describe(data2)
-~~~
+{% endhighlight %}
 
 
 ***5. Data cleaning***
@@ -155,11 +155,11 @@ The RA that you have been working with have coded missing values in three differ
 The following will take all values in data1 that are equal to "", "missing", or "9999", and code
 them as missing in a way that R understands:
 
-~~~{.r}
+{% highlight r %}
 data1[data1==""] <- NA
 data1[data1=="missing"] <- NA
 data1[data1=="9999"] <- NA
-~~~
+{% endhighlight %}
 
 Because R is "smart", it categorizes data types automatically when data are loaded. Before working
 with new data, especailly if it is real (i.e. messy), it is important to tell R what kind of data
@@ -172,12 +172,12 @@ The following will correctly format our variables for analyses:
 + sex is a discrete factor
 + diagnosis is a discrete factor
 
-~~~{.r}
+{% highlight r %}
 data1$age <- as.numeric(as.character(data1$age))
 data1$ethnicity <- factor(data1$ethnicity,levels=c("Cauc","AA","As","In","Other"))
 data1$sex <- factor(data1$sex, levels=c(0,1), labels=c("Male","Female"))
 data1$dx <- factor(data1$dx, levels=c(0,1), labels=c("Control","Case"))
-~~~
+{% endhighlight %}
 
 By indicating the levels of our factors, we have erased from R the memory that we once had values of
 "", "9999", and "missing" (which up until now R had no reason to assume were not observations).
@@ -186,20 +186,20 @@ Let us now apply the same cleanup steps to our second data frame:
 
 Remove missing:
 
-~~~{.r}
+{% highlight r %}
 data2[data2==""] <- NA
 data2[data2=="missing"] <- NA
 data2[data2=="9999"] <- NA
-~~~
+{% endhighlight %}
 
 Correctly format variables for analyses:
 
-~~~{.r}
+{% highlight r %}
 data2$genotype <- factor(data2$genotype, levels=c(0,1,2), labels=c("AA","AG","GG"))
 data2$cog1 <- as.numeric(as.character(data2$cog1))
 data2$cog2 <- as.numeric(as.character(data2$cog2))
 data2$cog3 <- as.numeric(as.character(data2$cog3))
-~~~
+{% endhighlight %}
 
 ***6. Merging data frames***
 ---
@@ -216,26 +216,26 @@ identifier column in each of our spreadsheets.
 
 First we need to make sure that the values in these columns are the same:
 
-~~~{.r}
+{% highlight r %}
 data2$subID <- gsub(data2$subID,pattern="subject",replacement="SUB_")
-~~~
+{% endhighlight %}
 
 We can then merge the two datasets by specifying their names (in order x,y) and then specifying
 which columns are to be used as the key to merging the two data frames (by.x and by.y):
 
-~~~{.r}
+{% highlight r %}
 alldata <- merge(data1,data2,by.x="subject_ID",by.y="subID")
-~~~
+{% endhighlight %}
 
 Skipping ahead a little - now we can look at histograms of our numeric variables, just to see what
 we are dealing with:
 
-~~~{.r}
+{% highlight r %}
 hist(data2$cog1)
 hist(data2$cog2)
 hist(data2$cog3)
 hist(data1$age)
-~~~
+{% endhighlight %}
 
 
 Now that our data are loaded, cleaned, and merged, it is time to do some basic statistics!
@@ -249,28 +249,28 @@ females between our case and control diagnosis groups**
 The ftable() function will give us a 2 x 2 contingency table of the frequency of observations in
 each category. the formula syntax "y ~ x" is common in R!
 
-~~~{.r}
+{% highlight r %}
 ftable(data=alldata,dx~sex)
-~~~
+{% endhighlight %}
 
 We now want to save that table as an *object* called "dxXsex_table":
 
-~~~{.r}
+{% highlight r %}
 dxXsex_table <- ftable(data=alldata,dx~sex)
-~~~
+{% endhighlight %}
 
 Now, in order to test our null hypothesis using a chi-squared test, we simply apply the chisq.test()
 function to that table:
 
-~~~{.r}
+{% highlight r %}
 chisq.test(dxXsex_table)
-~~~
+{% endhighlight %}
 
 Similarly, we can use the nonparametric Fisher test to get a more exact test statistic:
 
-~~~{.r}
+{% highlight r %}
 fisher.test(dxXsex_table)
-~~~
+{% endhighlight %}
 
 *A bit more advanced!*
 This will accoplish the same thing as ftable(), except that here we are *indexing* our alldata data
@@ -278,9 +278,9 @@ frame with the R syntax [<row>,<column>]. the blank value for <row> tells R that
 The c("dx","sex") value for <columns> means we want to use the columns named "dx" and "sex". the
 table() function knows to arrange these as a 2 x 2 contingency table.
 
-~~~{.r}
+{% highlight r %}
 table(alldata[ ,c("dx","sex")])
-~~~
+{% endhighlight %}
 
 
 ***STUDY QUESTION 2: What is the relationship between genotype and diagnosis?***
@@ -289,9 +289,9 @@ table(alldata[ ,c("dx","sex")])
 **for this question, our null hypothesis is that there is no difference in the number of males and
 females between our case and control diagnosis groups**
 
-~~~{.r}
+{% highlight r %}
 ftable(data=alldata,dx~genotype)
 dxXgene_table <- ftable(data=alldata,dx~genotype)
 chisq.test(dxXgene_table)
 fisher.test(dxXgene_table)
-~~~
+{% endhighlight %}
