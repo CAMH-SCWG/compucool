@@ -55,11 +55,11 @@ run
 + Click on these lines to highlight them, then click on "To Source" at the top of the panel
 + This moves the lines we just ran into our script so we can rerun this step tomorrow!
 
-~~~{.r}
+```{.r}
 library(rms)
 library(ggplot2)
 librar(car)
-~~~
+```
 
 ***3. Read in data***
 ---
