@@ -240,8 +240,7 @@ Now that our data are loaded, cleaned, and merged, it is time to do some basic s
 ***STUDY QUESTION 1: What is the relationship between sex and diagnosis?***
 ---
 
-**For this question, our null hypothesis is that there is no difference in the number of males and
-females between our case and control diagnosis groups**
+**For this question, our null hypothesis is that there is no difference in the number of males and females between our case and control diagnosis groups**
 
 The ftable() function will give us a 2 x 2 contingency table of the frequency of observations in each category. the formula syntax "y ~ x" is common in R!
 
@@ -280,8 +279,7 @@ table(alldata[ ,c("dx","sex")])
 ***STUDY QUESTION 2: What is the relationship between genotype and diagnosis?***
 ---
 
-**for this question, our null hypothesis is that there is no difference in the number of males and
-females between our case and control diagnosis groups**
+**for this question, our null hypothesis is that there is no difference in the number of males and females between our case and control diagnosis groups**
 
 {% highlight r %}
 ftable(data=alldata,dx~genotype)
