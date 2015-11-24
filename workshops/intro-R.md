@@ -17,9 +17,10 @@ Please have these both installed (come early if you need help):
 - **rstudio**: [Download from here](https://www.rstudio.com/products/RStudio/#Desktop)
 
 Also, please install here awesome R packages (again, if you don't know how please come early):
-- 'rms' ()
-- 'ggplot2'
-- 'car'
+
++ 'rms' ()
++ 'ggplot2'
++ 'car'
 
 --------
 Please download the following files
@@ -29,7 +30,7 @@ Please download the following files
 2. [Rtutorial_data2.csv](/lrn2compute/workshops/data/Rtutorial_data2.csv)
 
 
-
+---------
 ***1. RStudio environment***
 ---
 
@@ -50,7 +51,7 @@ Welcome to R studio! You should see 4 spaces:
   + Packages: a list of all the packages you have installed with checkboxes showing if it is loaded
   + Help: your help documentation with be shown here.
 
-
+----------
 ***2. Loading libraries / installing packages / basic scripting practice (comments/why?)***
 ---
 
@@ -72,6 +73,7 @@ library(ggplot2)
 librar(car)
 {% endhighlight %}
 
+--------
 ***3. Read in data***
 ---
 
@@ -113,7 +115,7 @@ type "?read.csv" in the Console
 
 Now we have two **"data frames"** loaded into our workspace. They are called data1 and data2.
 
-
+-------
 ***4. Basic data summaries and visualization ( head, tail, describe() )***
 ---
 
@@ -156,7 +158,7 @@ describe(data1)
 describe(data2)
 {% endhighlight %}
 
-
+---------
 ***5. Data cleaning***
 ---
 
@@ -215,6 +217,7 @@ data2$cog2 <- as.numeric(as.character(data2$cog2))
 data2$cog3 <- as.numeric(as.character(data2$cog3))
 {% endhighlight %}
 
+---------
 ***6. Merging data frames***
 ---
 
@@ -254,6 +257,7 @@ hist(data1$age)
 
 Now that our data are loaded, cleaned, and merged, it is time to do some basic statistics!
 
+---------
 ***STUDY QUESTION 1: What is the relationship between sex and diagnosis?***
 ---
 
@@ -297,6 +301,7 @@ table(alldata[ ,c("dx","sex")])
 {% endhighlight %}
 
 
+---------
 ***STUDY QUESTION 2: What is the relationship between genotype and diagnosis?***
 ---
 
