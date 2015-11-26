@@ -291,4 +291,4 @@ fisher.test(dxXgene_table)
 ---------
 ***P.S.****
 Here is an R script with all of the steps we went over today!!
-[Download Intro R script](/lrn2compute/workshops/data/Rtutorial_intro.csv)
+[Download Intro R script](/lrn2compute/workshops/data/Rtutorial_intro.R)
