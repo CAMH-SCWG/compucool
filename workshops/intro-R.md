@@ -287,3 +287,8 @@ dxXgene_table <- ftable(data=alldata,dx~genotype)
 chisq.test(dxXgene_table)
 fisher.test(dxXgene_table)
 {% endhighlight %}
+
+---------
+***P.S.****
+Here is an R script with all of the steps we went over today!!
+[Download Intro R script](/lrn2compute/workshops/data/Rtutorial_intro.csv)
