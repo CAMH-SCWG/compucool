@@ -70,7 +70,7 @@ run
 {% highlight r %}  
 library(rms)
 library(ggplot2)
-librar(car)
+library(car)
 {% endhighlight %}
 
 --------
