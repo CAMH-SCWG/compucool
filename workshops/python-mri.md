@@ -15,6 +15,9 @@ Some sample software you'll need to install:
 - **Both**: MRI viewer of your choice (I'm going to use AFNI)
 - **Both**: [Nibabel](http://nipy.org/nibabel/installation.html#installation)
 
+# Repo: 
+https://bitbucket.org/josephdviviano/mri-python
+
 # Lesson plan:
 
 {% highlight python %}
