@@ -23,7 +23,7 @@ highlighter: rouge
 ### content configuration ###
 title:       "Computing Skills Workshop for Researchers"
 keywords:    "CAMH, research, computing, scientific computing, workshop"
-description: "A week long series of self-paced computing skills fundamentals workshops for CAMH researchers"
+description: "A 6 day long series of self-paced computing skills fundamentals workshops for CAMH researchers"
 root:        "https://camh-scwg.github.io/compucool"
 sources_link: "http://camh-scwg.github.io/compucool"
 favicon:     #put a path like: "img/favicon.ico"
@@ -36,8 +36,8 @@ colors:
   black:     '#111111'
   white:     '#f8f8f8'
   blue:      '#49a7e9'
-  green:     '#9bcf2f'
-  purple:    '#c869bf'
-  orange:    '#fab125'
+  green:     '#C2CB20'
+  purple:    '#6E298D'
+  orange:    '#F78E1E'
   turquoise: '#0fbfcf'
   
