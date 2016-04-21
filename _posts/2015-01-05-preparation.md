@@ -37,3 +37,7 @@ Optionally:
 
 - [Source Tree](https://www.sourcetreeapp.com/) (Mac and Windows only)
 - [SmartGit](http://www.syntevo.com/smartgit/) (all platforms)
+
+### REDCap
+
+- [Request account](https://edc.camhx.ca/redcap/surveys/?s=DWETLY4P4J)
