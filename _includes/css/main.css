@@ -440,7 +440,7 @@ table tr:hover td {
   box-shadow: 2px 2px 1px #888888;
   min-width: 310px; 
   max-width: 310px;
-  min-height: 600px;
+  min-height: 800px;
   position: relative;
 }
 
@@ -451,6 +451,7 @@ table tr:hover td {
   padding: 5px;
   vertical-align: middle;
   text-align: center;
+  min-height: 100px;
 }
 
 .card-body {
