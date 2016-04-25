@@ -503,6 +503,7 @@ table tr:hover td {
 
 .day {
   clear: both;
+  padding-top: 100px;
 }
 
 /** Styles for writing answers that are revealed on hover */
