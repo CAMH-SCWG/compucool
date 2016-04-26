@@ -45,3 +45,7 @@ Optionally:
 ### MS Access
 
 - [remote.camh.ca](https://remote.camh.ca/vpn/index.html) for basic remote access (you'll need to install [Citrix Receiver](https://www.citrix.com/go/receiver.html))
+
+### Spreadsheets
+
+ - Excel via [remote.camh.ca](https://remote.camh.ca/vpn/index.html) (you'll need to install [Citrix Receiver](https://www.citrix.com/go/receiver.html)). Or download [OpenOffice](https://www.openoffice.org/) for free.
