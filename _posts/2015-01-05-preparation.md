@@ -41,3 +41,7 @@ Optionally:
 ### REDCap
 
 - [Request account](https://edc.camhx.ca/redcap/surveys/?s=DWETLY4P4J)
+
+### MS Access
+
+- [remote.camh.ca](https://remote.camh.ca/vpn/index.html) for basic remote access (you'll need to install [Citrix Receiver](https://www.citrix.com/go/receiver.html))
