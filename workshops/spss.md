@@ -16,5 +16,5 @@ Please download the following files
 
 
 1. [Data Example](compucool/workshops/SPSS Data Example.xls)
-2. [Exercise 1](/lrn2compute/workshops/data/Test_1_Score.xlsx)(compucool/workshops/SPSS Data Example.xls)
+2. [Exercise 1](compucool/workshops/SPSS Exercise 1.csv)
 3. [SPSS course manual](compucool/workshops/SPSS Course - 12MAY2016.pdf)
