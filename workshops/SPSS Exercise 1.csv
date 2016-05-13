@@ -1,0 +1,35 @@
+Age,Gender,Treatment,Date,Site,Outcome
+18,M,Placebo,14-Mar-95,Toronto,High
+25,F,Treat 1,04-Jul-94,Ottawa,1.371996369
+41,F,Treat 1,"August 11, 2003",Calgary,NA
+51,F,Placebo,01-Jun-06,Calgary,2.070981799
+24,M,Treat 1,"July 29, 2000",Calgary,98.1254
+15,M,Treat 1,21-Apr-07,Ottawa,9.19004482
+46,F,Placebo,01-May-06,Canada,3.752572373
+,M,Placebo,"November 29, 2004",Ottawa,9.864247482
+13,,Treat 1,07-Jun-99,Toronto,2.454017616
+45,,Placebo,07-Nov-00,Toronto,2.501210333
+51,F,Placebo,"October 19, 2008",Toronto,3.98798121
+24,M,Placebo,11-Sep-03,Ottawa,1.753145215
+85,m,Treat 1,"July 22, 1993",Toronto,2.887309848
+75,male,Treat 1,19-Oct-08,Calgary,5.924495839
+65,M,Placebo,04-Jan-95,Calgary,4.261871332
+55,M,Treat 1,10-Oct-08,Toronto,1.832727869
+45,F,Placebo,09-Sep-09,Ottawa,6.832917766
+81,"fe,a;e",Placebo,"August 15, 2008",Calgary,xxxxxxx
+64,Fem,Treat 1,"October 13, 1997",Toronto,3.777895543
+553,f,Treat 1,"January 28, 1998",Calgary,9.578580171
+45,M,Treat 1,16-Feb-01,Ottawa,1.872823403
+34,f,Treat 1,17-Aug-01,Ottawa,7.053647707
+84,M,Treat 1,22-Jul-00,Ottawa,3.775191866
+44,F,Treat 1,"April 27, 2001",Ottawa,5.84142313
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
