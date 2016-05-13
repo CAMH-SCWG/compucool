@@ -3,7 +3,7 @@ title: Workshop Title
 layout: workshop
 ---
 
-# Spreadsheets
+# SPSS
 
 --------
 
@@ -15,5 +15,6 @@ layout: workshop
 Please download the following files
 
 
-1. [Old Data](/lrn2compute/workshops/data/Old Data.xlsx)
-2. [Test 1 Scores](/lrn2compute/workshops/data/Test_1_Score.xlsx)
+1. [Data Example](/lrn2compute/workshops/data/Old Data.xlsx)
+2. [Exercise 1](/lrn2compute/workshops/data/Test_1_Score.xlsx)
+3. [SPSS course manual]
