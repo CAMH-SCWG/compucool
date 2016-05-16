@@ -1,5 +1,5 @@
 ---
-title: Programming
+title: Workshop Title
 layout: workshop
 ---
 
@@ -11,6 +11,7 @@ layout: workshop
 
 
 ---------
+
 
 
 
