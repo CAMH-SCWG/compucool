@@ -3,7 +3,7 @@ title: Workshop Title
 layout: workshop
 ---
 
-# SPSS
+# SPSS with Marcos!
 
 --------
 
