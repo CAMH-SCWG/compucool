@@ -3,7 +3,7 @@ title: Workshop Title
 layout: workshop
 ---
 
-# Spreadsheets
+# Spreadsheets with Yuliya and Navona!
 
 --------
 
