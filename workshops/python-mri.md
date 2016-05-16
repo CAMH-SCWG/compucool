@@ -2,7 +2,7 @@
 title: Workshop Title
 layout: workshop
 ---
-# Python 4 MRI
+# Python 4 MRI with Joseph!
 --------
 
 **Wifi SSID**: `workshop`
