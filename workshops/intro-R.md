@@ -3,7 +3,7 @@ title: Intro to R
 layout: workshop
 ---
 
-# Introduction to R - with Dan and Erin
+# Introduction to R - with Erin!
 
 --------
 
