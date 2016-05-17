@@ -8,7 +8,7 @@ layout: workshop
 With [Erin Dickie](mailto:erin.dickie@camh.ca) and [Jon Pipitone](mailto:jon.pipitone@camh.ca)
 
 - [Slides](https://docs.google.com/presentation/d/1wX_BFtiBWzsp2qjdoFyKptpgLDFMcnl3lyU7RwPM7kU/edit?usp=sharing)
-- [README Template](README.txt)
+- [README Template](https://raw.githubusercontent.com/CAMH-SCWG/compucool/gh-pages/workshops/README.md) and as [markdown](https://github.com/CAMH-SCWG/compucool/blob/gh-pages/workshops/README.md)
 
 ----
 
