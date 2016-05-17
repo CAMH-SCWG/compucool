@@ -4,11 +4,8 @@ A very short summary of the project. Just a sentence or two.
 
 Date Collected: 2014 through 2016
 
-Date Processed: 2016-05-18
-
 ### Dataset
 
-* brief summary of dataset/study
 * description of how data is acquired
 * what each folder contains 
 * pointers to external data used
@@ -17,7 +14,7 @@ Date Processed: 2016-05-18
 
 ### Contact People 
 > (Include name and email addresses) 
-* Principal Investigator
+* Principal Investigator:
 * Primary: (the person who ran the data)
 * Others: (the person(s) who else we might be able to ask questions of if the Primary is not reachable)
 * citation and authorship requirements if this data is used
