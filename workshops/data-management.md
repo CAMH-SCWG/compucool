@@ -7,6 +7,8 @@ layout: workshop
 
 With [Erin Dickie](mailto:erin.dickie@camh.ca) and [Jon Pipitone](mailto:jon.pipitone@camh.ca)
 
+- [Slides](https://docs.google.com/presentation/d/1wX_BFtiBWzsp2qjdoFyKptpgLDFMcnl3lyU7RwPM7kU/edit?usp=sharing)
+- [README Template](README.txt)
 
 ----
 
@@ -14,6 +16,9 @@ With [Erin Dickie](mailto:erin.dickie@camh.ca) and [Jon Pipitone](mailto:jon.pip
 Connect to *Transforming Lives* if you can. 
 
 If you don't have a CAMH ID, please connect to the `workshop` network.
+
+----
+
 
 ## Learning Markdown
 
