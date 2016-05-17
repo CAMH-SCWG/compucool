@@ -7,6 +7,9 @@ layout: workshop
 
 With [Erin Dickie](mailto:erin.dickie@camh.ca) and [Jon Pipitone](mailto:jon.pipitone@camh.ca)
 
+
+----
+
 ## WIFI
 Connect to *Transforming Lives* if you can. 
 
