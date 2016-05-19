@@ -16,5 +16,5 @@ Please download the following files
 
 
 1. [Studies Table](/compucool/workshops/SPSS Data Example.xls)
-2. [Workshop files](/compucool/workshops/SPSS Exercise 1.csv)
+2. [Workshop files](compucool/workshops/data/MS_Access_Workshop.accdb)
 
