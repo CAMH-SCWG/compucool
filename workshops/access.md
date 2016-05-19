@@ -11,7 +11,7 @@ layout: workshop
 
 ---------
 
-Here's how you include links to files:
+Please download the following files: 
 
 1. [studies_table.xlsx](compucool/workshops/MS Access Workshop.accdb)
 2. [MS_Access_Workshop.aacdb](compucool/workshops/MS Access Workshop.accdb)
