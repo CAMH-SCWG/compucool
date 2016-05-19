@@ -15,6 +15,6 @@ layout: workshop
 Please download the following files
 
 
-1. [Studies Table](/compucool/workshops/SPSS Data Example.xls)
+1. [Studies Table](compucool/workshops/data/Studies_table.xlsx)
 2. [Workshop files](compucool/workshops/data/MS_Access_Workshop.accdb)
 
