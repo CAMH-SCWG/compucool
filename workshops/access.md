@@ -15,6 +15,6 @@ layout: workshop
 Please download the following files
 
 
-1. [Studies_Table.xlsx](/compucool/workshops/data/Studies_table.xlsx)
-2. [Workshop_files.accdb](/compucool/workshops/data/MS_Access_Workshop.accdb)
+1. [Studies_Table.xlsx](/data/Studies_table.xlsx)
+2. [Workshop_files.accdb](/data/MS_Access_Workshop.accdb)
 
