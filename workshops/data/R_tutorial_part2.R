@@ -7,6 +7,7 @@
 library(rms)
 library(ggplot2)
 library(car)
+library(dplyr)
 
 # data should be merged and ready to go from day 1. If not, here's the code for it:
 
@@ -36,31 +37,78 @@ alldata <- merge(data1,data2,by.x="subject_ID",by.y="subID")
 
 ###### HERE WE GO WITH R PART 2 ######
 
-## STUDY QUESTION 3: cog1 ~ dx (t-test)
+## RESEARCH QUESTION 3: cog1 ~ dx (t-test)
+# 13. Write merged dataframe as new .csv
 
 t.test(data=alldata, cog1 ~ dx)
 
-# view this as basic boxplots (two ways: base package and ggplot2)
+## Wow we have a result!!
+## But one of my favorite things output R is that the statistical output can be saved as an object!! 
+my.t.result <- t.test(data=alldata, cog1 ~ dx) # saves to output to my.t.result
 
-boxplot(data=alldata, cog1 ~ dx)
+print(my.t.result)       ## prints to output to the console
+my.t.result$statistic    ## gets us the t statistic!
+my.t.result$parameter    ## the degrees of freedom
+my.t.result$p.value      ## gets us the p-value
+
+round(my.t.result$statistic,2) ## we can these numbers using the "round" function
+
+## let's put these three together into something we might want to report in our paper
+my.t.results.txt = paste0('t(',
+                        round(my.t.result$parameter,1),
+                        ') = ',
+                        round(my.t.result$statistic,2), ', p = ',
+                        round(my.t.result$p.value, 7))
+
+# view this as basic boxplots (two ways: base package and ggplot2)
 
 ggplot(data=alldata, aes(y=cog1,x=dx)) + 
 	geom_boxplot()
 
 # make it fancier:
+## first - let's deal with the NA's we don't want to plot - 
+## let's remove them from the plotting dataset
+data.toplot <-filter(alldata, !is.na(cog1), !is.na(dx))
 
-boxplot(data=alldata, cog1 ~ dx,outline=F, main="Effect of Diagnosis on Cog Score #1")
-stripchart(data=alldata, cog1 ~ dx, metho="jitter",jitter=0.2,vertical=T,add=T,pch=19)
-
-ggplot(data=alldata, aes(y=cog1,x=dx)) + 
+ggplot(toplot, aes(y=cog1,x=dx)) + 
 	geom_boxplot(outlier.shape=NA) + 
-	geom_jitter(alpha=0.5) +
-	labs(title="Effect of Diagnosis on Cog Score #1") 
+	geom_jitter(alpha=0.5) 
 
-## STUDY QUESTION 4: total_behaviour_score ~ age (linear regression)
+## even fancier - let's add a title, and annotation and label the axes
+ggplot(toplot, aes(y=cog1,x=dx)) + 
+  geom_boxplot(outlier.shape=NA) + 
+  geom_jitter(alpha=0.5) +
+  labs(title="Effect of Diagnosis on Cog Score #1",
+       y = "Cognitive Test 1",
+       x = "Diagnosis") +
+  annotate("text", label = my.t.results.txt, x = 1, y = 21) +
+  theme_bw()
+
+
+## NOW LET's save our plot!!!
+## Note: we can start by using the "Export" button in the plots tab..
+ggsave('figure1_ttestresults.pdf', width = 5, height = 5)
+
+## Let's make a diagnosis by cognition table
+my.stats.table <- summarise(alldata,
+                            "Mean" = mean(cog1, na.rm = T),
+                            "St Dev" = sd(cog1, na.rm = T))
+
+my.stats.table <- alldata %>% 
+                  group_by(dx) %>%
+                  summarise("Mean" = mean(cog1, na.rm = T),
+                            "St Dev" = sd(cog1, na.rm = T))
+
+## RESEARCH AIM 4: total_behaviour_score ~ age (linear regression)
 # calculate a composite variable by combining multiple variables
+# note new variables can be made easily
 
-alldata$totalcog <- (alldata$cog1 + alldata$cog3)/alldata$cog2
+# this is the base package way
+alldata$totalcog1 <- (alldata$cog1 + alldata$cog3)/alldata$cog2
+
+# using dplyr's mutate verb
+alldata <- mutate(alldata, 
+                  totalcog = cog1 + cog3 / cog2)
 
 # simple linear regression (two ways: base package and rms)
 
@@ -90,6 +138,8 @@ ggplot(data=alldata, aes(y=totalcog, x=age)) +
 	geom_point() + 
 	geom_smooth(method=lm)
 	
+# Challenge 1: add a title and change the axis labels
+
 # visualize predicted results using rms
 
 plot(Predict(lm.rms))
@@ -114,29 +164,32 @@ ggplot(data=alldata, aes(x=totalcog)) + geom_histogram()
 alldata$totalcog_log <- log(alldata$totalcog)
 alldata$totalcog_sqrt <- sqrt(alldata$totalcog)
 
-# here's a neat way to optimize power transformations:
+## Challenge - how would you do this with dplyr's mutate function??
 
+
+# here's a super neat way to optimize power transformations:
+# the powerTransform function will calculate the best transform for your data
+# it saves the best exponent as the value "lambda"
+
+# calculate the best exponent using powerTransform:
 pT <- powerTransform(alldata$totalcog)
-alldata$totalcog_pT <- alldata$totalcog^pT$lambda
+# apply the power transform and save the result to a new variable
+alldata$totalcog_pT <- alldata$totalcog^pT$lambda ## note ^ is exponent in r
 
 # let's try our regression again with the transformed outcome (using rms):
 
-lm2 <- ols(totalcog_pT ~ age , data=alldata)
-lm2
-anova(lm2)
-
-# if we want to use summary() on our ols() object we will have to redefine datadist
-# since we created new variables that were not in the original datadist object
+# Note: if we want to use summary() on our ols() object we will have to redefine datadist
+#       since we created new variables that were not in the original datadist object
 
 dd.alldata <- datadist(alldata)
 options(datadist="dd.alldata")
-summary(lm2)
 
-# Let's look at the scatterplot + line of best fit once more:
+## Challenge 2: run a new regression (using ols) with the your new transformed cognitive score as the dependant variable
+## get the stats summary
 
-ggplot(data=alldata, aes(y=totalcog_pT, x=age)) + geom_point() + geom_smooth(method=lm)
+## Challenge 3: use ggplot to make a new plot of this effect
 
-## STUDY QUESTION 5: total_behaviour_score ~ age + sex + genotype (multiple linear regression)
+## RESEARCH AIM 5: total_behaviour_score ~ age + sex + genotype (multiple linear regression)
 # this is were we start to add covariates and do multiple regression
 
 lm3 <- ols(data=alldata, totalcog_pT ~ age + genotype + sex)
@@ -149,45 +202,20 @@ summary(lm3)
 
 plot(Predict(lm3))
 
-# to visualize a given effect more informatively, we want to caculate the residuals 
-# of the model lacking our co-varitate of interest and plot those residuals as our outcome:
-
-# for genotype we want a boxplot of model residuals:
-
-lm3.plot <- ols(data=alldata, totalcog_pT ~ age + sex)
-ggplot(data=alldata, aes(y=resid(lm3.plot), x=genotype)) + 
-	geom_boxplot()
-
-# see it thinks NA is a value! That is because the ols() object stores NA input values
-# as NA residuals, and ggplot2 sees these as another level to plot. Fix by re-running
-# the model to exclude missing observations and plotting the data subset where NAs are
-# excluded:
-
-lm3.plot <- ols(data=subset(alldata,genotype!="NA"), totalcog_pT ~ age + sex)
-ggplot(data=subset(alldata,genotype!="NA"), aes(y=resid(lm3.plot), x=genotype)) + 
-	geom_boxplot()
-
-# for age we want a scatterplot of residuals. same subsetting principle applies:
-
-lm3.plot <- ols(data=subset(alldata,age!="NA"), totalcog_pT ~ genotype + sex)
-ggplot(data=subset(alldata,age!="NA"), aes(y=resid(lm3.plot), x=age)) + 
-	geom_point() + 
-	geom_smooth(method=lm)
-
-# CONCEPT: notice that if we include age in our model and plot age on the x-axis in our
-# residual plot, the effect is lost - we have modeled it out:
-
-lm3.plot <- ols(data=alldata, totalcog_pT ~ genotype + sex + age)
-ggplot(data=alldata, aes(y=resid(lm3.plot), x=age)) + 
-	geom_point() + 
-	geom_smooth(method=lm)
-
 # now let's say we want to recode out genotype variable so that we have only 2 groups:
 # those who "carry" the G allele, and those who do not carry it:
 
-alldata$riskcarrier[alldata$genotype=="AG" | alldata$genotype=="GG"] <- "carrier"
-alldata$riskcarrier[alldata$genotype=="AA"] <- "non-carrier"
-alldata$riskcarrier <- as.factor(alldata$riskcarrier)
+alldata$riskcarrier1[alldata$genotype=="AG" | alldata$genotype=="GG"] <- "carrier"
+alldata$riskcarrier1[alldata$genotype=="AA"] <- "non-carrier"
+alldata$riskcarrier1 <- as.factor(alldata$riskcarrier)
+
+## same thing using dplyr's mutate and plyr's revalue
+library(plyr)
+alldata <- mutate(alldata, 
+                   riskcarrier = factor(revalue(genotype,
+                                                  c("AG" = "carrier",
+                                                    "GG" = "carrier",
+                                                    "AA" = "non-carrier"))))
 
 # re-run the model:
 
@@ -196,7 +224,7 @@ lm3
 anova(lm3)
 summary(lm3)
 
-## STUDY QUESTION 5: total_behaviour_score ~ age*riskcarrier + sex (interaction!)
+## RESEARCH AIM 5: total_behaviour_score ~ age*riskcarrier + sex (interaction!)
 # the concept of statistical interaction goes by many names and has many definitions.
 # Simply this is the concept that the effect of one variable changes depending on
 # the value of another variable. Interaction is indicated in R formula syntax with
@@ -207,64 +235,11 @@ lm4 <- lm(totalcog_pT ~ sex + riskcarrier*age, data=alldata)
 summary(lm4)
 anova(lm4)
 
-# To plot the interaction we just tell ggplo2 to plot the regression lines for ou
 
-lm4.plot <- ols(data=subset(alldata,age!="NA" & riskcarrier!="NA"), totalcog_pT ~ sex)
-ggplot(data=subset(alldata,age!="NA" & riskcarrier!="NA"), aes(y=resid(lm4.plot), x=age, col=riskcarrier)) + 
-	geom_point() + 
-	geom_smooth(method=lm)
-
-	
-## MORE FUN
-# Extracting/indexing statistics and function output values (returns)
-# just like we can get variable values out of a data frame by using the dollar sign
-# we can use "$" to get returns out of objects. Returns are values that are stored
-# in function outputs. For example, from STUDY QUESTION 4:
-
-lm.rms$fitted.values
-lm.rms$stats
-
-# Using indexed items to enhance your plots:
-
-################################################################# ERIN
-
-# b. Plot interaction (ggplot)
-## remove NAs from plot
-### cog1 show the interaction effect
-toplot <- alldata[!is.na(alldata$genotype),]
-toplot <- toplot[!is.na(toplot$sex),]
-ggplot(toplot, aes(y=totalcog_sqrt, x=age, colour=genotype)) + 
-	geom_point() + 
-	geom_smooth(method=lm) + 
-	facet_wrap(~sex)
-
-ggplot(toplot, aes(y=cog1, x=age, colour=genotype)) + 
-	geom_point() + 
-	geom_smooth(method=lm) 
-
-ggplot(toplot, aes(y=cog2, x=age, colour=genotype)) + 
-	geom_point() + 
-	geom_smooth(method=lm) + 
-	facet_wrap(~genotype)
-
-ggplot(toplot, aes(y=cog3, x=age, colour=genotype)) + 
-	geom_point() + 
-	geom_smooth(method=lm) 
-
-toplot <- alldata[!is.na(alldata$riskcarrier),]
-toplot <- toplot[!is.na(toplot$sex),]
-
-ggplot(alldata, aes(y=cog1, x=age)) + 
-	geom_point() + 
-	facet_wrap(~ riskcarrier)
-	
-
-# 12. Save workspace (save.image() )
-# 
-# 13. Write merged dataframe as new .csv
+################################################################# 
+## reshaping data to look at all three cognitive scores 
 
 
-cogvar <- c("cog1","cog2","cog3")
 library('reshape2')
 
 ### but let's look at all three subscales....
@@ -273,44 +248,71 @@ alldata_melted <- melt(alldata, id.vars=c("subject_ID","age","sex", "ethnicity",
                        variable.name = "cog_var",
                        value.name = "cognitive.score")
 
-toplot<-subset(alldata_melted, !is.na(cognitive.score))
-toplot<-subset(toplot, !is.na(dx))
-toplot<-subset(toplot, !is.na(riskcarrier))
+toplot <- filter(alldata_melted, !is.na(cognitive.score), 
+                                 !is.na(dx), 
+                                 !is.na(riskcarrier))
 
 ggplot(toplot, aes(y=cognitive.score,x=age,color=riskcarrier)) + 
   geom_point() + 
   geom_smooth(method=lm) + 
   facet_wrap(~cog_var, scales = "free")
 
-
+## LAST CHALLENGE: can you use dplyr to present these statistics in a table??
 ## LAST BUT NOT LEAST, running a loop to screen for significance at multiple tests (manhattan plot)
-
-alldata.sub <- subset(alldata, ethnicity=="Cauc")
 
 outcomes <- names(alldata)[7:13]
 
-p.vals <- NULL
-index <- 1
-for (outcome in outcomes) {
-form <- formula(paste(outcome,"~ sex + age + dx"))
-model <- ols(data=alldata.sub, form)
-p.vals[index] <- anova(model)[3,5]
-index <- index + 1
+p.vals <- numeric(length(outcomes))
+for (index in 1:length(outcomes)) {
+  outcome <- outcomes[index]
+  form <- formula(paste(outcome,"~ sex + age + dx"))
+  model <- ols(data=alldata, form)
+  p.vals[index] <- anova(model)[3,5]
 }
 
-# make a plot to visualize the group of results
-# multiple comparisons
+## p.adjust is an awesome way to FDR correct your p-value
+p.FDR <- p.adjust(p.vals, method = "fdr")
 
-p.vals.adjusted <- p.adjust(p.vals,method="fdr")
-sig <- ifelse(p.vals.adjusted<0.05,19,5)
+############ BONUS SECTION - the "right" way to plot....###############
+##### How to visualize a significant effect from our regression
+##### ...Controlling for the other variables in the model....
+# to visualize a given effect more informatively, we want to caculate the residuals 
+# of the model lacking our co-varitate of interest and plot those residuals as our outcome:
 
-plot(-log(p.vals,base=10),pch=sig, xaxt="n",
-	ylab="-log(raw p-value) for dx", 
-	xlab="", 
-	main="Effect of Diagnosis on Different Cognitive Scores")
-axis(1, at=1:length(outcomes), labels=outcomes, las=2)
-par(xpd=T)
-text(-log(p.vals,base=10), labels=outcomes, pos=3)
-par(xpd=F)
-abline(h=-log(0.05),col="red",lty=3)
+# for genotype we want a boxplot of model residuals:
 
+lm3.plot <- ols(data=alldata, totalcog_pT ~ genotype + age)
+
+ggplot(data=alldata, aes(y=resid(lm3.plot), x=sex)) + 
+  geom_boxplot()
+
+# see it thinks NA is a value! That is because the ols() object stores NA input values
+# as NA residuals, and ggplot2 sees these as another level to plot. Fix by re-running
+# the model to exclude missing observations and plotting the data subset where NAs are
+# excluded:
+
+lm3.plot <- ols(data=subset(alldata,sex!="NA"), totalcog_pT ~ age + genotype)
+ggplot(data=subset(alldata,sex!="NA"), aes(y=resid(lm3.plot), x=sex)) + 
+  geom_boxplot()
+
+# for age we want a scatterplot of residuals. same subsetting principle applies:
+
+lm3.plot <- ols(data=subset(alldata,age!="NA"), totalcog_pT ~ genotype + sex)
+ggplot(data=subset(alldata,age!="NA"), aes(y=resid(lm3.plot), x=age)) + 
+  geom_point() + 
+  geom_smooth(method=lm)
+
+# CONCEPT: notice that if we include age in our model and plot age on the x-axis in our
+# residual plot, the effect is lost - we have modeled it out:
+
+lm3.plot <- ols(data=alldata, totalcog_pT ~ genotype + sex + age)
+ggplot(data=alldata, aes(y=resid(lm3.plot), x=age)) + 
+  geom_point() + 
+  geom_smooth(method=lm)
+
+# To plot the interaction we just tell ggplo2 to plot the regression lines for ou
+
+lm4.plot <- ols(data=subset(alldata,age!="NA" & riskcarrier!="NA"), totalcog_pT ~ sex)
+ggplot(data=subset(alldata,age!="NA" & riskcarrier!="NA"), aes(y=resid(lm4.plot), x=age, col=riskcarrier)) + 
+  geom_point() + 
+  geom_smooth(method=lm)
