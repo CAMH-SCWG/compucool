@@ -33,7 +33,7 @@ Please download the following files
 ---------
 We will go over this R script today:
 
-[Todays R script](/lrn2compute/workshops/data/R_tutorial_part2.R)
+[Todays R script](/compucool/workshops/data/R_tutorial_part2.R)
 
 Please download it so you can follow along!
 ---
