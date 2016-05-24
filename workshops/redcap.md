@@ -1,22 +1,33 @@
 ---
-title: Workshop Title
+title: REDCap
 layout: workshop
 ---
 
-# REDCap
+# Introduction to REDCap w/ Navona & Natalia
 
 --------
 
 **Wifi SSID**: `workshop`
 
 
+---------
+Please have these both installed (come early if you need help):
 
--  [REDCap](https://edc.camhx.ca/redcap/)
+- **REDCap**: [login here](https://edc.camhx.ca/redcap/)
 
-If you don't have your own account, use:
-account name: rworkshop 
-password:     Rworkshop1
+Account info: 
+
+
 
 ---------
 
-Demographics form content: 
+***Demographics Form***
+
+---------
+***Example instrument***
+---------
+
+
+
+---------
+
