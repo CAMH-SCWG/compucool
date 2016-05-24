@@ -47,7 +47,7 @@ pass:  Rworkshop1
 
 ---------
 
-***Example instrument***
+***Example instrument for us to program***
 
 1. On most days, I feel happy
 2. My temperament is similar to that of my peers
@@ -57,6 +57,11 @@ pass:  Rworkshop1
 
 
 ---------
+
+***Example instrument for us to upload***
+
+
+1. [SANS.xlsx](/data/SANS.xlsx)
 
 
 
