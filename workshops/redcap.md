@@ -61,7 +61,12 @@ pass:  Rworkshop1
 ***Example instrument for us to upload***
 
 
-1. [SANS.xlsx](/data/SANS.xlsx)
+[SANS.xlsx](/data/SANS.xlsx)
 
+---------
+
+***Example data for us to upload***
+
+[SANS_data.csv](/data/SANS_data.csv)
 
 
