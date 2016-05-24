@@ -49,6 +49,13 @@ pass:  Rworkshop1
 
 ***Example instrument***
 
+1. On most days, I feel happy
+2. My temperament is similar to that of my peers
+3. I usually find it hard to get out of bed
+4. I often cry for no reason
+5. Overall, I lead a good life
+
+
 ---------
 
 
