@@ -1,5 +1,5 @@
 ---
-title: REDCap
+title: Workshop Title
 layout: workshop
 ---
 
