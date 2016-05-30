@@ -61,12 +61,12 @@ pass:  Rworkshop1
 ***Example instrument for us to upload***
 
 
-[SANS.xlsx](/data/SANS.xlsx)
+[SANS.xlsx](/compucool/workshops/data/SANS.xlsx)
 
 ---------
 
 ***Example data for us to upload***
 
-[SANS_data.csv](/data/SANS_data.csv)
+[SANS_data.csv](/compucool/workshops/data/SANS_data.csv)
 
 
